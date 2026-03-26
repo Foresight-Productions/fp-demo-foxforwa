@@ -200,6 +200,16 @@
                   linear-gradient(to top, rgba(6,14,29,0.6) 0%, transparent 40%);
       pointer-events: none;
     }
+    .hero-primary-badge {
+      position: absolute; bottom: 3rem; right: 2.5rem; z-index: 10;
+      background: var(--accent);
+      padding: 1.25rem 1.75rem; text-align: center;
+      box-shadow: 0 8px 40px rgba(200,16,46,0.5);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 92% 100%, 0 100%);
+    }
+    .hpb-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+    .hpb-date { font-family: 'Lexend', sans-serif; font-size: 2.25rem; font-weight: 900; color: #fff; line-height: 1; letter-spacing: -0.03em; }
+    .hpb-year { font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.65); letter-spacing: 0.1em; margin-top: 0.1rem; }
 
     /* ─── PROOF BAR ─── */
     .proof-bar {
@@ -236,30 +246,72 @@
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     /* ─── PLATFORM ─── */
-    #platform { background: var(--bg); }
-    .platform-rows { display: flex; flex-direction: column; max-width: 1100px; }
-    .platform-row {
-      display: grid; grid-template-columns: 120px 220px 1fr;
-      align-items: start; gap: 2rem; padding: 3rem 0;
-      border-top: 1px solid var(--border);
-      transition: all 0.2s ease;
+    #platform { background: var(--primary); position: relative; overflow: hidden; }
+    #platform::before {
+      content: 'WA·6';
+      position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+      font-family: 'Lexend', sans-serif; font-size: 28vw; font-weight: 900;
+      color: rgba(255,255,255,0.025); line-height: 1; pointer-events: none;
+      letter-spacing: -0.05em; user-select: none;
     }
-    .platform-row:last-child { border-bottom: 1px solid var(--border); }
-    .platform-row:hover .platform-num { color: rgba(200,16,46,0.2); }
+    #platform .section-eyebrow { color: rgba(255,255,255,0.45); }
+    #platform .section-eyebrow::before { background: var(--accent); }
+    #platform .section-title { color: #fff; }
+    #platform .section-lead { color: rgba(255,255,255,0.55); }
+    .platform-rows { display: flex; flex-direction: column; max-width: 1100px; position: relative; z-index: 1; }
+    .platform-row {
+      display: grid; grid-template-columns: 130px 220px 1fr;
+      align-items: center; gap: 2.5rem; padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.25s ease; cursor: default;
+    }
+    .platform-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .platform-row:hover { padding-left: 1rem; border-left: 4px solid var(--accent); margin-left: -1rem; }
+    .platform-row:hover .platform-num { -webkit-text-stroke-color: var(--accent); }
     .platform-num {
-      font-family: 'Lexend', sans-serif; font-size: 5.5rem; font-weight: 800;
-      color: var(--border); line-height: 1; letter-spacing: -0.06em;
-      transition: color 0.2s ease;
+      font-family: 'Lexend', sans-serif; font-size: 7rem; font-weight: 900;
+      -webkit-text-stroke: 2px rgba(255,255,255,0.18);
+      color: transparent; line-height: 1; letter-spacing: -0.06em;
+      transition: -webkit-text-stroke-color 0.25s ease;
       user-select: none;
     }
-    .platform-icon-wrap { display: flex; flex-direction: column; gap: 0.75rem; padding-top: 0.5rem; }
+    .platform-icon-wrap { display: flex; flex-direction: column; gap: 0.75rem; }
     .platform-icon {
-      width: 48px; height: 48px; background: var(--bg-subtle);
-      border: 1.5px solid var(--border); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .platform-name { font-family: 'Lexend', sans-serif; font-size: 1.25rem; font-weight: 800; color: var(--primary); line-height: 1.2; }
-    .platform-desc { font-size: 1rem; color: var(--text-muted); line-height: 1.8; padding-top: 0.6rem; }
+    .platform-icon svg { stroke: rgba(255,255,255,0.7); }
+    .platform-name { font-family: 'Lexend', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; line-height: 1.2; }
+    .platform-desc { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.85; }
+
+    /* ─── PULL QUOTE ─── */
+    .quote-section {
+      background: var(--accent);
+      padding: 7rem 8%; position: relative; overflow: hidden;
+      clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+      margin: -3rem 0;
+    }
+    .quote-section::before {
+      content: '\201C';
+      position: absolute; top: -2rem; left: 5%;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28rem; line-height: 1; color: rgba(0,0,0,0.12);
+      pointer-events: none; user-select: none;
+    }
+    .quote-inner { max-width: 900px; margin: 0 auto; text-align: center; position: relative; z-index: 1; padding: 2rem 0; }
+    .quote-text {
+      font-family: 'Lexend', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.6rem);
+      font-weight: 700; color: #fff; line-height: 1.3;
+      letter-spacing: -0.02em; margin-bottom: 2rem;
+    }
+    .quote-cite {
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65);
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+    }
+    .quote-cite::before, .quote-cite::after { content: ''; display: block; width: 40px; height: 1px; background: rgba(255,255,255,0.4); }
 
     /* ─── ABOUT ─── */
     #about { background: var(--primary); }
@@ -296,29 +348,34 @@
     .about-points li svg { flex-shrink: 0; margin-top: 2px; }
 
     /* ─── TESTIMONIALS ─── */
-    #reviews { background: var(--bg); }
+    #reviews { background: #060E1D; padding-top: 9rem; }
+    #reviews .section-eyebrow { color: rgba(255,255,255,0.4); }
+    #reviews .section-eyebrow::before { background: var(--accent); }
+    #reviews .section-title { color: #fff; }
+    #reviews .section-lead { color: rgba(255,255,255,0.5); margin: 0 auto 4rem; text-align: center; }
+    #reviews > .fade-up { text-align: center; }
     .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
     .review-card {
-      background: var(--surface); padding: 2.25rem;
-      border-top: 4px solid var(--accent);
-      box-shadow: 0 4px 24px rgba(15,37,73,0.07);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      position: relative;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 2.5rem;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      position: relative; overflow: hidden;
     }
     .review-card::before {
       content: '\201C';
-      position: absolute; top: 1.5rem; right: 1.75rem;
-      font-family: Georgia, serif; font-size: 5rem; line-height: 1;
-      color: var(--bg-subtle); font-weight: 900;
+      position: absolute; top: -1rem; right: 1.5rem;
+      font-family: Georgia, serif; font-size: 8rem; line-height: 1;
+      color: rgba(200,16,46,0.15); font-weight: 900;
       pointer-events: none; user-select: none;
     }
-    .review-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(15,37,73,0.12); }
-    .review-stars { display: flex; gap: 3px; margin-bottom: 1rem; }
+    .review-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.07); border-color: rgba(200,16,46,0.4); }
+    .review-stars { display: flex; gap: 3px; margin-bottom: 1.25rem; }
     .review-stars svg { color: #F59E0B; }
-    .review-quote { font-size: 1rem; color: var(--text); line-height: 1.75; font-style: italic; margin-bottom: 1.75rem; position: relative; z-index: 1; }
-    .review-author { display: flex; flex-direction: column; }
-    .review-name { font-weight: 800; font-size: 0.9rem; color: var(--primary); }
-    .review-role { font-size: 0.8rem; color: var(--text-muted); }
+    .review-quote { font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.8; font-style: italic; margin-bottom: 2rem; position: relative; z-index: 1; }
+    .review-author { display: flex; flex-direction: column; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .review-name { font-weight: 800; font-size: 0.9rem; color: #fff; }
+    .review-role { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 0.15rem; }
 
     /* ─── CTA BANNER ─── */
     .cta-banner {
@@ -403,9 +460,15 @@
       .proof-sep { display: none; }
       .proof-bar { gap: 0; }
       .proof-item { padding: 0.4rem 1rem; }
-      .platform-row { grid-template-columns: 70px 1fr; }
+      .platform-row { grid-template-columns: 70px 1fr; gap: 1rem; }
+      .platform-row:hover { padding-left: 0.5rem; margin-left: -0.5rem; }
       .platform-num { font-size: 3.5rem; }
       .platform-desc { grid-column: 2; }
+      .quote-section { clip-path: none; margin: 0; padding: 5rem 1.5rem; }
+      .quote-section::before { font-size: 14rem; }
+      .quote-text { font-size: 1.4rem; }
+      #reviews { padding-top: 5rem; }
+      #reviews .section-lead { text-align: left; }
       .about-inner { grid-template-columns: 1fr; gap: 3rem; }
       .about-accent-bar { display: none; }
       .about-badge { bottom: 1.5rem; right: 0.75rem; }
@@ -488,7 +551,11 @@
     </div>
   </div>
   <div class="hero-right" id="heroImg">
-    <span class="hero-img-credit">Photo via Unsplash</span>
+    <div class="hero-primary-badge">
+      <div class="hpb-label">Primary</div>
+      <div class="hpb-date">Aug 4</div>
+      <div class="hpb-year">2026</div>
+    </div>
   </div>
 </section>
 
@@ -626,6 +693,14 @@
     </div>
   </div>
 </section>
+
+<!-- ─── PULL QUOTE ─── -->
+<div class="quote-section fade-up">
+  <div class="quote-inner">
+    <p class="quote-text">"The Olympic Peninsula built this country. It's time Washington sent someone to Congress who actually knows what that means."</p>
+    <p class="quote-cite">Teresa Fox — Candidate, WA-6</p>
+  </div>
+</div>
 
 <!-- ─── TESTIMONIALS ─── -->
 <section id="reviews">
