@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teresa Fox for U.S. Congress | WA-6 | Bremerton, WA</title>
+  <meta name="description" content="Teresa Fox is running for Washington's 6th Congressional District. An occupational safety professional and emergency manager fighting for maritime jobs, timber, veterans, and working families across the Olympic Peninsula, Kitsap, and South Sound.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://foresight-productions.github.io/fp-demo-foxforwa/">
+  <meta property="og:title" content="Teresa Fox for U.S. Congress | WA-6 · Bremerton, WA">
+  <meta property="og:description" content="Teresa Fox is running for Washington's 6th Congressional District — fighting for maritime jobs, timber, veterans, and working families across the Olympic Peninsula, Kitsap, and South Sound.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=630&fit=crop&auto=format">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pacific Northwest waterfront landscape representing the communities Teresa Fox will serve in WA-6">
+  <meta property="og:site_name" content="Teresa Fox for U.S. Congress">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Teresa Fox for U.S. Congress | WA-6 · Bremerton, WA">
+  <meta name="twitter:description" content="Teresa Fox is running for Washington's 6th Congressional District — fighting for maritime jobs, timber, veterans, and working families across the Olympic Peninsula, Kitsap, and South Sound.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=630&fit=crop&auto=format">
+
+  <!-- Design System
+    Style: Trust & Authority
+    Archetype: Editorial Split
+    Fonts: Lexend / Source Sans 3
+    Palette: primary #1B3A6B | accent #C8102E | bg #F8FAFC | text #1E293B
+    Anti-patterns avoided: AI purple/pink gradients, outdated design, hidden credentials
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1B3A6B;
+      --primary-dark: #122751;
+      --accent: #C8102E;
+      --accent-dark: #a00d24;
+      --text: #1E293B;
+      --text-muted: #64748B;
+      --bg: #F8FAFC;
+      --bg-subtle: #EEF2F7;
+      --surface: #FFFFFF;
+      --border: #CBD5E1;
+      --gold: #B8962E;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Lexend', sans-serif; line-height: 1.15; }
+
+    /* ─── NAV ─── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    #nav.scrolled {
+      background: rgba(27, 58, 107, 0.97);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    .nav-logo {
+      font-family: 'Lexend', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      flex-shrink: 0;
+    }
+    .nav-logo span { color: #C8102E; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-shrink: 0;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.18s ease;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 0.45rem 1.25rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.18s ease !important;
+    }
+    .nav-cta:hover { background: var(--accent-dark) !important; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile overlay */
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--primary);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .nav-overlay.open { display: flex; }
+    .nav-overlay a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Lexend', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      transition: color 0.18s ease;
+    }
+    .nav-overlay a:hover { color: var(--accent); }
+    .nav-overlay .nav-cta {
+      background: var(--accent);
+      padding: 0.75rem 2.5rem;
+      border-radius: 4px;
+      font-size: 1.25rem !important;
+    }
+
+    /* ─── HERO — EDITORIAL SPLIT ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-left {
+      background: var(--primary);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 6% 5rem 8%;
+      position: relative;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+    }
+    .hero-headline {
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-headline em {
+      font-style: normal;
+      color: #C8102E;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2.5rem;
+      max-width: 440px;
+      line-height: 1.7;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-family: 'Lexend', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.18s ease, transform 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border: 2px solid rgba(255,255,255,0.45);
+      border-radius: 4px;
+      font-family: 'Lexend', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: border-color 0.18s ease, background 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+    .hero-district {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      gap: 2rem;
+    }
+    .hero-district-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-district-item .label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .hero-district-item .value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .hero-right {
+      position: relative;
+      background: #0a1628;
+      overflow: hidden;
+    }
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+    .hero-img-credit {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ─── PROOF BAR ─── */
+    .proof-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.03em;
+    }
+    .proof-item svg { flex-shrink: 0; }
+    .proof-sep {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+    }
+    .proof-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ─── SECTIONS SHARED ─── */
+    section { padding: 6rem 5%; }
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 3.5rem;
+    }
+
+    /* fade-in-up */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── PLATFORM ─── */
+    #platform { background: var(--bg); }
+    .platform-rows { display: flex; flex-direction: column; }
+    .platform-row {
+      display: grid;
+      grid-template-columns: 100px 1fr 2fr;
+      align-items: start;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      transition: background 0.2s ease;
+    }
+    .platform-row:last-child { border-bottom: 1px solid var(--border); }
+    .platform-row:hover { background: var(--bg-subtle); margin: 0 -2rem; padding-left: 2rem; padding-right: 2rem; }
+    .platform-num {
+      font-family: 'Lexend', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--border);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .platform-icon-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .platform-name {
+      font-family: 'Lexend', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .platform-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--bg-subtle);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .platform-desc {
+      font-size: 0.97rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      padding-top: 0.2rem;
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--surface); }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-img-wrap {
+      position: relative;
+      padding-bottom: 3rem;
+    }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: 0;
+      right: -1.5rem;
+      background: var(--primary);
+      color: #fff;
+      padding: 1.25rem 1.75rem;
+      border-radius: 2px;
+      text-align: center;
+    }
+    .about-badge .num {
+      font-family: 'Lexend', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+      color: #fff;
+    }
+    .about-badge .lbl {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.2rem;
+    }
+    .about-content .section-eyebrow { margin-bottom: 0.5rem; }
+    .about-bio {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-box {
+      background: var(--bg-subtle);
+      padding: 1.25rem;
+      border-radius: 4px;
+      border-top: 3px solid var(--accent);
+    }
+    .stat-num {
+      font-family: 'Lexend', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 0.3rem;
+      line-height: 1.3;
+    }
+    .about-points { list-style: none; }
+    .about-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+    .about-points li svg { flex-shrink: 0; margin-top: 2px; }
+
+    /* ─── TESTIMONIALS ─── */
+    #reviews { background: var(--bg); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: 4px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .review-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .review-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 1rem;
+    }
+    .review-stars svg { color: #F59E0B; }
+    .review-quote {
+      font-size: 0.97rem;
+      color: var(--text);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+    .review-author {
+      display: flex;
+      flex-direction: column;
+    }
+    .review-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+    .review-role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ─── CTA BANNER ─── */
+    .cta-banner {
+      background: var(--primary);
+      padding: 5rem 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 60%;
+      height: 200%;
+      background: rgba(200,16,46,0.06);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .cta-banner-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.75rem;
+    }
+    .cta-banner h2 {
+      font-size: clamp(1.6rem, 3vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--surface); }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--bg-subtle);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-info-item .lbl {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+    .contact-info-item .val {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .contact-info-item a { color: var(--primary); text-decoration: none; }
+    .contact-info-item a:hover { color: var(--accent); }
+    .contact-hours {
+      background: var(--bg-subtle);
+      padding: 1.25rem;
+      border-radius: 4px;
+      margin-top: 1.5rem;
+    }
+    .contact-hours .h-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .contact-hours .h-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .form-group label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.03em;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 0.7rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+      min-height: 44px;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(27,58,107,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-family: 'Lexend', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.18s ease, transform 0.15s ease;
+      min-height: 48px;
+    }
+    .form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0D1E3A;
+      padding: 3rem 5% 2rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+    }
+    .footer-brand .logo {
+      font-family: 'Lexend', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff;
+    }
+    .footer-brand .logo span { color: var(--accent); }
+    .footer-brand p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.5rem;
+      max-width: 260px;
+      line-height: 1.5;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.18s ease;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-disclaimer {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+      text-align: right;
+      max-width: 380px;
+      line-height: 1.4;
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      #nav { padding: 0 1.2rem; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+
+      .hero { grid-template-columns: 1fr; min-height: 100svh; }
+      .hero-left { padding: 7rem 1.5rem 3rem; }
+      .hero-right { display: none; }
+
+      .hero-btns { flex-direction: column; align-items: flex-start; }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-outline { width: 100%; max-width: 320px; justify-content: center; }
+
+      .hero-district { flex-wrap: wrap; gap: 1rem; }
+
+      .proof-sep { display: none; }
+      .proof-bar { gap: 1rem; }
+
+      .platform-row { grid-template-columns: 60px 1fr; }
+      .platform-desc { grid-column: 2; }
+
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-img-wrap { padding-bottom: 2rem; }
+      .about-badge { bottom: 0; right: 0.5rem; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+
+      .reviews-grid { grid-template-columns: 1fr; }
+
+      .cta-banner { padding: 3.5rem 1.2rem; }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-inner { flex-direction: column; }
+      .footer-links { flex-wrap: wrap; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-disclaimer { text-align: center; max-width: 100%; }
+
+      section { padding: 4rem 1.2rem; }
+    }
+
+    @media (max-width: 400px) {
+      .about-stats { grid-template-columns: 1fr; }
+      .hero-district { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .fade-up { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<header id="nav">
+  <a href="#" class="nav-logo">Fox <span>for</span> WA</a>
+  <div class="nav-links">
+    <a href="#platform">Platform</a>
+    <a href="#about">About Teresa</a>
+    <a href="#reviews">Endorsements</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta">Get Involved</a>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile Overlay -->
+<div class="nav-overlay" id="navOverlay">
+  <a href="#platform" onclick="toggleNav()">Platform</a>
+  <a href="#about" onclick="toggleNav()">About Teresa</a>
+  <a href="#reviews" onclick="toggleNav()">Endorsements</a>
+  <a href="#contact" onclick="toggleNav()">Contact</a>
+  <a href="#contact" class="nav-cta" onclick="toggleNav()">Get Involved</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Republican · Washington's 6th District</div>
+    <h1 class="hero-headline">Fighting for the <em>Olympic Peninsula</em> — and Everyone Who Built It.</h1>
+    <p class="hero-sub">Teresa Fox is an occupational safety professional and emergency manager who's worked in shipyards and naval facilities. She's running to give stronger representation to workers, veterans, and small businesses across Kitsap, the Olympic Peninsula, and South Sound.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4-4 4M3 12h18"/></svg>
+        Volunteer
+      </a>
+      <a href="#platform" class="btn-outline">See Her Platform</a>
+    </div>
+    <div class="hero-district">
+      <div class="hero-district-item">
+        <span class="label">District</span>
+        <span class="value">WA-6</span>
+      </div>
+      <div class="hero-district-item">
+        <span class="label">Primary</span>
+        <span class="value">August 4, 2026</span>
+      </div>
+      <div class="hero-district-item">
+        <span class="label">Party</span>
+        <span class="value">Republican</span>
+      </div>
+      <div class="hero-district-item">
+        <span class="label">Based in</span>
+        <span class="value">Bremerton, WA</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right" id="heroImg">
+    <span class="hero-img-credit">Photo via Unsplash</span>
+  </div>
+</section>
+
+<!-- ─── PROOF BAR ─── -->
+<div class="proof-bar">
+  <div class="proof-item">
+    <div class="proof-dot"></div>
+    Republican Candidate
+  </div>
+  <div class="proof-sep"></div>
+  <div class="proof-item">
+    <svg width="14" height="14" fill="none" stroke="var(--primary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Washington's 6th District
+  </div>
+  <div class="proof-sep"></div>
+  <div class="proof-item">
+    <svg width="14" height="14" fill="none" stroke="var(--primary)" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Primary: August 4, 2026
+  </div>
+  <div class="proof-sep"></div>
+  <div class="proof-item">
+    <svg width="14" height="14" fill="none" stroke="var(--primary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    Fighting for Working Families
+  </div>
+</div>
+
+<!-- ─── PLATFORM ─── -->
+<section id="platform">
+  <div class="fade-up">
+    <p class="section-eyebrow">Her Platform</p>
+    <h2 class="section-title">Five Priorities.<br>One Mission.</h2>
+    <p class="section-lead">Teresa Fox's campaign is built around the industries and communities that define the Olympic Peninsula, Kitsap, and South Sound. No platitudes — just real commitments to the workers and families who make this region run.</p>
+  </div>
+  <div class="platform-rows">
+    <div class="platform-row fade-up">
+      <div class="platform-num">01</div>
+      <div class="platform-icon-wrap">
+        <div class="platform-icon">
+          <svg width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/><path d="M3 21h18"/></svg>
+        </div>
+        <div class="platform-name">Maritime Jobs</div>
+      </div>
+      <p class="platform-desc">The Puget Sound shipyards and naval facilities are the economic backbone of WA-6. Teresa will fight to protect defense contracting, expand apprenticeship programs, and keep skilled trades jobs right here in Kitsap — not offshored or downsized out of existence.</p>
+    </div>
+    <div class="platform-row fade-up">
+      <div class="platform-num">02</div>
+      <div class="platform-icon-wrap">
+        <div class="platform-icon">
+          <svg width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <div class="platform-name">Timber Economy</div>
+      </div>
+      <p class="platform-desc">The Olympic Peninsula's timber industry supports thousands of families and rural communities. Teresa will push back on federal overreach that shuts down responsible harvesting and will advocate for sustainable forestry policies that balance environmental stewardship with economic reality.</p>
+    </div>
+    <div class="platform-row fade-up">
+      <div class="platform-num">03</div>
+      <div class="platform-icon-wrap">
+        <div class="platform-icon">
+          <svg width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="platform-name">Military &amp; Veterans</div>
+      </div>
+      <p class="platform-desc">With Naval Base Kitsap as the district's largest employer, Teresa understands what's at stake for active-duty families and veterans. She'll fight to fully fund VA services, improve transition support for separating servicemembers, and ensure Bremerton's military community gets the congressional attention it deserves.</p>
+    </div>
+    <div class="platform-row fade-up">
+      <div class="platform-num">04</div>
+      <div class="platform-icon-wrap">
+        <div class="platform-icon">
+          <svg width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <div class="platform-name">Small Business</div>
+      </div>
+      <p class="platform-desc">Teresa has seen firsthand how regulations and rising costs squeeze local business owners in communities like Sequim, Port Angeles, and Port Orchard. She'll champion lower regulatory burdens, oppose tax hikes on small employers, and bring a pro-business voice to Congress that actually knows the difference between a Main Street shop and a Fortune 500 boardroom.</p>
+    </div>
+    <div class="platform-row fade-up">
+      <div class="platform-num">05</div>
+      <div class="platform-icon-wrap">
+        <div class="platform-icon">
+          <svg width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="platform-name">Working Families</div>
+      </div>
+      <p class="platform-desc">The cost of housing, healthcare, and child care has made it harder than ever for families in WA-6 to get ahead. Teresa will push for workforce housing solutions, oppose policies that inflate energy costs, and make sure Washington's working families — not lobbyists — have a seat at the table.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap fade-up">
+      <img class="about-img" id="aboutImg" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80" alt="Teresa Fox — candidate for Washington's 6th Congressional District">
+      <div class="about-badge">
+        <div class="num">WA</div>
+        <div class="lbl">District 6</div>
+      </div>
+    </div>
+    <div class="about-content fade-up">
+      <p class="section-eyebrow">About Teresa</p>
+      <h2 class="section-title">A Worker. An Expert. A Neighbor.</h2>
+      <p class="about-bio">Teresa Fox grew up understanding what it means to work hard for what you have. As an occupational safety professional and emergency manager, she's spent her career in the shipyards, naval facilities, and offshore operations that define this region — not studying them from a distance, but working inside them.<br><br>She's also served with the Washington State Department of Labor and Industries and taught at Olympic College. Teresa isn't a career politician. She's someone who has spent decades protecting workers, and now she wants to protect the communities those workers live in.</p>
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-num" data-target="15">0</div>
+          <div class="stat-lbl">Years of occupational safety experience</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" data-target="3">0</div>
+          <div class="stat-lbl">Key industries: maritime, timber, defense</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" data-target="1">0</div>
+          <div class="stat-lbl">Mission: stronger representation for WA-6</div>
+        </div>
+      </div>
+      <ul class="about-points">
+        <li>
+          <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Hands-on background in shipyards and naval facilities
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Served with WA Dept. of Labor &amp; Industries
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Faculty at Olympic College — invested in education
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Bremerton resident — this is her home, not a campaign stop
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section id="reviews">
+  <div class="fade-up" style="text-align:center;margin-bottom:3rem;">
+    <p class="section-eyebrow">From the District</p>
+    <h2 class="section-title">Voices from WA-6</h2>
+    <p class="section-lead" style="margin:0 auto;">Hear from the workers, veterans, and business owners Teresa is fighting for.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card fade-up">
+      <div class="review-stars">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-quote">"Teresa actually understands how a shipyard works — the safety culture, the contracts, the pressure. When she talks about protecting maritime jobs, she's not reading from talking points. She knows the job."</p>
+      <div class="review-author">
+        <span class="review-name">Dave M.</span>
+        <span class="review-role">Journeyman Pipefitter, Bremerton</span>
+      </div>
+    </div>
+    <div class="review-card fade-up">
+      <div class="review-stars">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-quote">"I've been running a hardware store in Sequim for 22 years. Every election cycle someone promises to cut red tape, and nothing changes. Teresa is different — she's a neighbor who actually asked me what's hurting my business before asking for my vote."</p>
+      <div class="review-author">
+        <span class="review-name">Linda K.</span>
+        <span class="review-role">Small Business Owner, Sequim</span>
+      </div>
+    </div>
+    <div class="review-card fade-up">
+      <div class="review-stars">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-quote">"After 20 years in the Navy I settled in Port Orchard and watched the VA system fail too many of my brothers and sisters. Teresa has spent her career inside naval facilities — she knows what we need. She has my full support."</p>
+      <div class="review-author">
+        <span class="review-name">Rick T.</span>
+        <span class="review-role">U.S. Navy Veteran, Port Orchard</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BANNER ─── -->
+<div class="cta-banner fade-up">
+  <p class="cta-banner-eyebrow">Washington's 6th Congressional District</p>
+  <h2>Proudly Serving the Olympic Peninsula, Kitsap, and South Sound</h2>
+  <p>From Bremerton to Port Angeles, Port Orchard to Sequim — Teresa Fox is running to make sure every corner of WA-6 has a strong, experienced voice in Washington, D.C.</p>
+  <a href="#contact" class="btn-primary" style="display:inline-flex;">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4-4 4M3 12h18"/></svg>
+    Get Involved Today
+  </a>
+</div>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="fade-up">
+      <p class="section-eyebrow">Join the Campaign</p>
+      <h2 class="section-title" style="margin-bottom:2rem;">Let's Talk</h2>
+      <div class="contact-info-item">
+        <div class="contact-icon">
+          <svg width="20" height="20" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="lbl">Email</div>
+          <div class="val"><a href="mailto:Info@FoxforWA.com">Info@FoxforWA.com</a></div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">
+          <svg width="20" height="20" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="lbl">Based in</div>
+          <div class="val">Bremerton, WA — Olympic/Kitsap Peninsula</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">
+          <svg width="20" height="20" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="lbl">Follow the Campaign</div>
+          <div class="val"><a href="https://x.com/Fox4WA" target="_blank" rel="noopener">@Fox4WA on X</a></div>
+        </div>
+      </div>
+      <div class="contact-hours">
+        <div class="h-title">Campaign Election Timeline</div>
+        <div class="h-row"><span>Announcement</span><span>March 12, 2026</span></div>
+        <div class="h-row"><span>Primary Election</span><span>August 4, 2026</span></div>
+        <div class="h-row"><span>General Election</span><span>November 3, 2026</span></div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <form class="contact-form" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="Teresa">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Fox">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" placeholder="(360) 555-0100">
+        </div>
+        <div class="form-group">
+          <label for="interest">I want to</label>
+          <select id="interest">
+            <option>Volunteer for the campaign</option>
+            <option>Make a donation</option>
+            <option>Learn more about Teresa's platform</option>
+            <option>Host a community event</option>
+            <option>Get a yard sign</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell Teresa what matters most to you and your community..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Teresa <span>Fox</span> for Congress</div>
+      <p>Republican candidate for Washington's 6th Congressional District. Fighting for maritime jobs, timber, veterans, and working families.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#platform">Platform</a>
+      <a href="#about">About Teresa</a>
+      <a href="#reviews">Endorsements</a>
+      <a href="#contact">Volunteer</a>
+      <a href="mailto:Info@FoxforWA.com">Info@FoxforWA.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Teresa Fox for U.S. Congress. All rights reserved.</p>
+    <p class="footer-disclaimer">Paid for by Teresa Fox for U.S. Congress. This demo was created by Foresight Productions · foresight-productions.com</p>
+  </div>
+</footer>
+
+<script>
+  // Nav toggle
+  function toggleNav() {
+    const overlay = document.getElementById('navOverlay');
+    const btn = document.querySelector('.nav-toggle');
+    overlay.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+  }
+
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+  });
+  document.getElementById('nav').classList.add('scrolled'); // always show bg on campaign site
+
+  // Hero image — Pacific NW landscape / Puget Sound
+  fetch('https://api.unsplash.com/photos/random?query=puget+sound+pacific+northwest+waterfront&orientation=portrait&client_id=X40-Lk7G_Q6Zk-Cn4jXIDNbMzfHlIfj7fdhl-J-5b58')
+    .then(r => r.json())
+    .then(d => {
+      if (d && d.urls) {
+        const wrap = document.getElementById('heroImg');
+        const img = document.createElement('img');
+        img.src = d.urls.regular;
+        img.alt = 'Pacific Northwest waterfront — WA-6';
+        wrap.insertBefore(img, wrap.firstChild);
+      }
+    }).catch(() => {
+      // fallback static
+      const wrap = document.getElementById('heroImg');
+      const img = document.createElement('img');
+      img.src = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&auto=format&fit=crop&q=80';
+      img.alt = 'Pacific Northwest mountains — WA-6';
+      wrap.insertBefore(img, wrap.firstChild);
+    });
+
+  // Fade-in-up observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Count-up animation
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || (target > 5 ? '+' : '');
+        let start = 0;
+        const step = Math.ceil(target / 30);
+        const timer = setInterval(() => {
+          start = Math.min(start + step, target);
+          el.textContent = start + suffix;
+          if (start >= target) clearInterval(timer);
+        }, 40);
+        countObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-target]').forEach(el => {
+    el.dataset.suffix = parseInt(el.dataset.target) > 5 ? '+' : '';
+    countObserver.observe(el);
+  });
+</script>
+</body>
+</html>
