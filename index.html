@@ -91,8 +91,12 @@
       text-decoration: none;
       letter-spacing: -0.01em;
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
     }
     .nav-logo span { color: #C8102E; }
+    .nav-logo-img { height: 38px; width: auto; object-fit: contain; }
+    .nav-logo-fallback { display: none; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -814,7 +818,7 @@
 
 <!-- ─── NAV ─── -->
 <header id="nav">
-  <a href="#" class="nav-logo">Fox <span>for</span> WA</a>
+  <a href="#" class="nav-logo"><img src="https://foxforwa.com/Fox-Logo-trans.png" alt="Fox for WA" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="nav-logo-fallback">Fox <span>for</span> WA</span></a>
   <div class="nav-links">
     <a href="#platform">Platform</a>
     <a href="#about">About Teresa</a>
@@ -961,7 +965,7 @@
 <section id="about">
   <div class="about-inner">
     <div class="about-img-wrap fade-up">
-      <img class="about-img" id="aboutImg" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80" alt="Teresa Fox — candidate for Washington's 6th Congressional District">
+      <img class="about-img" id="aboutImg" src="https://foxforwa.com/0K8A7659-Edit.jpg" alt="Teresa Fox — candidate for Washington's 6th Congressional District" onerror="this.src='https://foxforwa.com/0K8A7687-Edit.jpg'" >
       <div class="about-badge">
         <div class="num">WA</div>
         <div class="lbl">District 6</div>
@@ -1187,25 +1191,18 @@
     document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
   });
 
-  // Hero image — Pacific NW landscape / Puget Sound
-  fetch('https://api.unsplash.com/photos/random?query=puget+sound+pacific+northwest+waterfront&orientation=portrait&client_id=X40-Lk7G_Q6Zk-Cn4jXIDNbMzfHlIfj7fdhl-J-5b58')
-    .then(r => r.json())
-    .then(d => {
-      if (d && d.urls) {
-        const wrap = document.getElementById('heroImg');
-        const img = document.createElement('img');
-        img.src = d.urls.regular;
-        img.alt = 'Pacific Northwest waterfront — WA-6';
-        wrap.insertBefore(img, wrap.firstChild);
-      }
-    }).catch(() => {
-      // fallback static
-      const wrap = document.getElementById('heroImg');
-      const img = document.createElement('img');
-      img.src = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&auto=format&fit=crop&q=80';
-      img.alt = 'Pacific Northwest mountains — WA-6';
-      wrap.insertBefore(img, wrap.firstChild);
-    });
+  // Hero image — use client's actual campaign kickoff photo
+  (function() {
+    const wrap = document.getElementById('heroImg');
+    const img = document.createElement('img');
+    img.alt = 'Teresa Fox campaign — WA-6';
+    img.onerror = function() {
+      this.src = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&auto=format&fit=crop&q=80';
+      this.alt = 'Pacific Northwest — WA-6';
+    };
+    img.src = 'https://foxforwa.com/Kickoff-Desktop-Final.jpg';
+    wrap.insertBefore(img, wrap.firstChild);
+  })();
 
   // Fade-in-up observer
   const observer = new IntersectionObserver((entries) => {
